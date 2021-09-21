@@ -3,27 +3,29 @@ package main
 import (
 	"context"
 	"os/signal"
-
 	"github.com/Ryuichi-g/micro_services/handlers"
-
-	// "fmt"
-	// "io/ioutil"
 	"log"
 	"net/http"
 	"os"
 	"time"
+	"github.com/nicholasjackson/env"
 )
 
+var bindAddress = env.String("BIND_ADDRESS", false, ":9090", "Bind address for the server")
+
 func main() {
-	l := log.New(os.Stdout, "product-api", log.LstdFlags)
+
+	env.Parse()
+
+	l := log.New(os.Stdout, "products-api ", log.LstdFlags)
 
 	ph := handlers.NewProducts(l)
 
 	sm := http.NewServeMux()
 	sm.Handle("/", ph)
 
-	s := &http.Server{
-		Addr: ":9090",
+	s := http.Server{
+		Addr: *bindAddress,
 		Handler: sm,
 		ErrorLog: l,
 		ReadTimeout: 5 *time.Second,

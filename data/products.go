@@ -24,7 +24,7 @@ func (p*Products) ToJSON(w io.Writer) error {
 	return e.Encode(p)
 }
 
-func GetProducts() []*Product {
+func GetProducts() Products {
 	return productList
 }
 
