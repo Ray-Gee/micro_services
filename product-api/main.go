@@ -11,8 +11,8 @@ import (
 	"github.com/go-openapi/runtime/middleware"
 
 	"github.com/gorilla/mux"
-	"github.com/Ryuichi-g/micro_services/data"
-	"github.com/Ryuichi-g/micro_services/handlers"
+	"github.com/Ryuichi-g/micro_services/product-api/data"
+	"github.com/Ryuichi-g/micro_services/product-api/handlers"
 	"github.com/nicholasjackson/env"
 )
 
