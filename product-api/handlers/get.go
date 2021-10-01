@@ -6,7 +6,7 @@ import (
 	"github.com/Ryuichi-g/micro_services/product-api/data"
 )
 
-// swagger:route GET /products products listProducts
+// swagger:route GET /products products listSingleProduct
 // Return a list of products from the database
 // responses:
 //	200: productsResponse
