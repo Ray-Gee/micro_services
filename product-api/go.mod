@@ -9,6 +9,8 @@ require (
 	github.com/go-openapi/jsonreference v0.19.6 // indirect
 	github.com/go-openapi/runtime v0.19.31
 	github.com/go-openapi/strfmt v0.20.2 // indirect
+	github.com/go-openapi/swag v0.19.15 // indirect
+	github.com/go-openapi/validate v0.20.2 // indirect
 	github.com/go-playground/universal-translator v0.17.0 // indirect
 	github.com/go-playground/validator v9.31.0+incompatible
 	github.com/go-stack/stack v1.8.1 // indirect

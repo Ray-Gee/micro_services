@@ -6,7 +6,7 @@ import (
 	"github.com/Ryuichi-g/micro_services/product-api/data"
 )
 
-// swagger:route GET /products products listSingleProduct
+// swagger:route GET /products products listProducts
 // Return a list of products from the database
 // responses:
 //	200: productsResponse
@@ -15,6 +15,8 @@ import (
 func (p *Products) ListAll(rw http.ResponseWriter, r *http.Request) {
 	p.l.Println("[DEBUG] get all records")
 
+	rw.Header().Add("Content-Type", "application/json")
+	
 	prods := data.GetProducts()
 
 	err := data.ToJSON(prods, rw)
