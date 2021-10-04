@@ -6,7 +6,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/hashicorp/go-hclog"
-	"github.com/nicholasjackson/building-microservices-youtube/product-images/files"
+	"github.com/Ryuichi-g/micro_services/product-images/files"
 )
 
 // Files is a handler for reading and writing files
@@ -30,6 +30,9 @@ func (f *Files) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
 
 	// no need to check for invalid id or filename as the mux router will not send requests
 	// here unless they have the correct parameters
+	if id == "" || fn == "" {
+		f.invalidURI(r.URL.String())
+	}
 
 	f.saveFile(id, fn, rw, r)
 }

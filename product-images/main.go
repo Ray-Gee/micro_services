@@ -9,8 +9,6 @@ import (
 
 	"github.com/gorilla/mux"
 	hclog "github.com/hashicorp/go-hclog"
-	// "github.com/nicholasjackson/building-microservices-youtube/product-images/files"
-	// "github.com/nicholasjackson/building-microservices-youtube/product-images/handlers"
 	"github.com/Ryuichi-g/micro_services/product-images/files"
 	"github.com/Ryuichi-g/micro_services/product-images/handlers"
 	"github.com/nicholasjackson/env"
